@@ -1,0 +1,122 @@
+body{
+  background-color: #F0F0F0;
+}
+
+header{
+  .title{
+    text-align: center;
+    padding-top: 10px;
+    font-size: 1.6rem;
+  }
+
+  .phone_login{
+    display: none;
+  }
+}
+main{
+  >div{
+    #title_phone{
+      display: none;
+    }
+  }
+}
+
+table{
+  text-align: center;
+}
+
+
+
+
+//手机端，隐藏节次，课程名称，任课教师
+@media screen and(max-width: 415px) {
+  body{
+    background-color: #ffffff;
+  }
+  header{
+    //标题
+    .title{
+      padding-top: 24px;
+      font-size: 1rem;
+    }
+
+    //登录按钮
+    .pc_login{
+      display: none;
+    }
+    .phone_login{
+      display: block;
+      width: 15%;
+      height: 100%;
+      //background-color: red;
+      a{
+        //display: block;
+        color: #009688;
+        //background-color: #c2c2c2;
+        font-size: 1.6rem;
+        float: right;
+        line-height: 60px;
+        margin-right: 16px;
+      }
+    }
+  }
+  main{
+    >div{
+      #title_pc{
+        display: none;
+      }
+
+      #title_phone{
+        display: block;
+      }
+    }
+  }
+  //表格
+  table{
+    colgroup{
+
+      col{
+        .tableCom();
+      }
+
+      col:nth-child(3){
+        //display: none;
+        width: 200px;
+      }
+    }
+    //表格头部
+    thead{
+      >tr{
+        td{
+          .tableCom();
+        }
+      }
+    }
+    //表格内容
+    tbody{
+      >tr{
+        td{
+          .tableCom();
+        }
+      }
+    }
+  }
+}
+
+
+
+//封装表格样式方法
+.tableCom(){
+
+
+    &:last-child{
+      display: none;
+    }
+
+    &:nth-child(2){
+      display: none;
+    }
+    &:nth-child(4){
+      display: none;
+    }
+}

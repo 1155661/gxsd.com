@@ -1,0 +1,9 @@
+.toolbar > button,
+.toolbar > form {
+  float: left;
+  margin-bottom: 1rem;
+}
+.toolbar form {
+  margin-left: 0.5rem;
+}
+/*# sourceMappingURL=datalist.css.map */

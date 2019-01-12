@@ -1,0 +1,9 @@
+#test2,
+#test3 {
+  display: none;
+}
+#test2 form,
+#test3 form {
+  margin-top: 2rem;
+}
+/*# sourceMappingURL=teacher.css.map */

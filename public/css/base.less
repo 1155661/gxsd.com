@@ -1,0 +1,52 @@
+.layui-tab{
+  height: 100%;
+}
+.layui-tab-item:extend(.layui-tab){
+
+}
+.layui-logo{}
+
+#base{
+  .sliderBtn{
+    margin-top: 14px;
+    margin-left: 14px;
+    display: none;
+
+    a{
+      color: #009688;
+      font-size: 30px;
+    }
+  }
+  .layui-icon{
+    //font-size:20px;
+  }
+}
+@media screen and(max-width: 415px){
+  //.layui-logo{
+  //  display: none;
+  //}
+  .layui-side{
+    //display: none;
+    margin-left: -200px;
+  }
+  .layui-logo{
+    display: none;
+  }
+  .layui-body{
+    width: 100%;
+    margin-left: -200px;
+    .layui-tab{
+      //margin-right: -200px;
+      width: 100%;
+    }
+  }
+  .layui-footer{
+    margin-left: -200px;
+  }
+
+  #base{
+    .sliderBtn{
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,132 @@
+//@import "common";
+
+@font-face {
+  font-family: 'myFont';
+  src: url("../css/font/font-z.ttf");
+}
+body,html{
+  height: 100%;
+}
+
+body{
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+}
+#login{
+  position: relative;
+  background: url("../img/gamersky_01origin_01_201812719133F7.jpg") no-repeat right 0;
+  background-size: cover;
+  height: 100%;
+  ////简介
+  //>.font-init{
+  //  width: 50rem;
+  //  position: absolute;
+  //  top: 200px;
+  //  left: 100px;
+  //  color: white;
+  //  font-family: myFont;
+  //  font-size: 4rem;
+  //
+  //}
+
+
+  .login_left{
+    height: 100%;
+
+    .bg{
+      width: 100%;
+      height: 120%;
+      position: relative;
+      background: url("../img/gamersky_01origin_01_201812719133F7.jpg") no-repeat -1408px -80px;
+      overflow: hidden;
+      z-index: 1;
+      box-shadow: 1px -10px 10px rgba(0,0,0,0.1);
+
+      >h2{
+        position: absolute;
+        z-index: 3;
+        text-align: center;
+        margin-top: 10rem;
+        width: 100%;
+        color: white;
+      }
+
+
+
+      &::after{
+        content: "";
+        width:100%;
+        height:100%;
+        position: absolute;
+        left:0;
+        top:0;
+        background: inherit;
+        //-webkit-filter：blur(10px)
+        filter:blur(8px);
+        z-index: 2;
+      }
+
+      form{
+        position: absolute;
+        z-index: 3;
+        //padding-top: 13rem;
+        margin-top: 14rem;
+      }
+
+      .phone_code{
+        display: none;
+      }
+    }
+  }
+
+  .login_right{
+    img{
+      width: 100%;
+    }
+  }
+}
+
+//手机端
+//@media  screen and(max-width: 414px){
+//  #login{
+//
+//    .login_left{
+//
+//      .bg{
+//        form{
+//          //margin-left: 6rem;
+//          //background-color: red;
+//          //margin: 0 auto;
+//        }
+//
+//        .phone_code{
+//          display: block;
+//        }
+//
+//        .pc_code{
+//          display: none;
+//        }
+//      }
+//    }
+//  }
+//}
+//平板
+//@media screen and(max-width: 768px){
+//    #login{
+//      .login_left{
+//        .bg{
+//          //background: none;
+//        }
+//      }
+//    }
+//}
+//@media screen and(min-width: 768px){
+//  #login{
+//    .login_left{
+//      .bg{
+//        background: none;
+//      }
+//    }
+//  }
+//}

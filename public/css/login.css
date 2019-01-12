@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'myFont';
+  src: url("../css/font/font-z.ttf");
+}
+body,
+html {
+  height: 100%;
+}
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+#login {
+  position: relative;
+  background: url("../img/gamersky_01origin_01_201812719133F7.jpg") no-repeat right 0;
+  background-size: cover;
+  height: 100%;
+}
+#login .login_left {
+  height: 100%;
+}
+#login .login_left .bg {
+  width: 100%;
+  height: 120%;
+  position: relative;
+  background: url("../img/gamersky_01origin_01_201812719133F7.jpg") no-repeat -1408px -80px;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 1px -10px 10px rgba(0, 0, 0, 0.1);
+}
+#login .login_left .bg > h2 {
+  position: absolute;
+  z-index: 3;
+  text-align: center;
+  margin-top: 10rem;
+  width: 100%;
+  color: white;
+}
+#login .login_left .bg::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: inherit;
+  filter: blur(8px);
+  z-index: 2;
+}
+#login .login_left .bg form {
+  position: absolute;
+  z-index: 3;
+  margin-top: 14rem;
+}
+#login .login_left .bg .phone_code {
+  display: none;
+}
+#login .login_right img {
+  width: 100%;
+}
+/*# sourceMappingURL=login.css.map */

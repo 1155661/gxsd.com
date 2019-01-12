@@ -1,0 +1,35 @@
+.layui-tab,
+.layui-tab-item {
+  height: 100%;
+}
+#base .sliderBtn {
+  margin-top: 14px;
+  margin-left: 14px;
+  display: none;
+}
+#base .sliderBtn a {
+  color: #009688;
+  font-size: 30px;
+}
+@media screen and (max-width: 415px) {
+  .layui-side {
+    margin-left: -200px;
+  }
+  .layui-logo {
+    display: none;
+  }
+  .layui-body {
+    width: 100%;
+    margin-left: -200px;
+  }
+  .layui-body .layui-tab {
+    width: 100%;
+  }
+  .layui-footer {
+    margin-left: -200px;
+  }
+  #base .sliderBtn {
+    display: block;
+  }
+}
+/*# sourceMappingURL=base.css.map */

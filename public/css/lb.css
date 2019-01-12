@@ -1,0 +1,16 @@
+#test1,
+#test2 {
+  display: none;
+  background-color: red;
+}
+#test1 form,
+#test2 form {
+  margin-top: 1rem;
+}
+table tbody .active {
+  background-color: #eeeeee;
+}
+table tbody .active:hover {
+  color: #000000;
+}
+/*# sourceMappingURL=lb.css.map */

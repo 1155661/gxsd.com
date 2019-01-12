@@ -1,0 +1,78 @@
+body {
+  background-color: #F0F0F0;
+}
+header .title {
+  text-align: center;
+  padding-top: 10px;
+  font-size: 1.6rem;
+}
+header .phone_login {
+  display: none;
+}
+main > div #title_phone {
+  display: none;
+}
+table {
+  text-align: center;
+}
+@media screen and (max-width: 415px) {
+  body {
+    background-color: #ffffff;
+  }
+  header .title {
+    padding-top: 24px;
+    font-size: 1rem;
+  }
+  header .pc_login {
+    display: none;
+  }
+  header .phone_login {
+    display: block;
+    width: 15%;
+    height: 100%;
+  }
+  header .phone_login a {
+    color: #009688;
+    font-size: 1.6rem;
+    float: right;
+    line-height: 60px;
+    margin-right: 16px;
+  }
+  main > div #title_pc {
+    display: none;
+  }
+  main > div #title_phone {
+    display: block;
+  }
+  table colgroup col:last-child {
+    display: none;
+  }
+  table colgroup col:nth-child(2) {
+    display: none;
+  }
+  table colgroup col:nth-child(4) {
+    display: none;
+  }
+  table colgroup col:nth-child(3) {
+    width: 200px;
+  }
+  table thead > tr td:last-child {
+    display: none;
+  }
+  table thead > tr td:nth-child(2) {
+    display: none;
+  }
+  table thead > tr td:nth-child(4) {
+    display: none;
+  }
+  table tbody > tr td:last-child {
+    display: none;
+  }
+  table tbody > tr td:nth-child(2) {
+    display: none;
+  }
+  table tbody > tr td:nth-child(4) {
+    display: none;
+  }
+}
+/*# sourceMappingURL=homeIndex.css.map */
