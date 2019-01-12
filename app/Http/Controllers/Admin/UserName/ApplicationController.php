@@ -144,25 +144,32 @@ class ApplicationController extends Controller
     //返回课程信息
     public function getCurse(){
 
-        $myCures = $_GET['cures'];
-        $userId = $_GET['id'];
+//        $myCures = $_GET['cures'];
+        $userId = (int)$_GET['id'];
 
+//        dd($userId);
 
+//        if($myCures == 'true'){
+//            $course = \DB::table('task')
+//                ->where('teachername',$userId)
+//                ->select('task.*','course.*')
+//                ->join('course','course.id','=','task.classname')
+//                ->groupBy('course.name')
+//                ->get();
+//
+//            return $course;
+//        }else{
+//            return $course = \DB::table('course')->get();
+//        }
+        $data['myCurse'] =  $course = \DB::table('task')
+                            ->where('teachername',$userId)
+                            ->select('task.*','course.*')
+                            ->join('course','course.id','=','task.classname')
+                            ->groupBy('course.name')
+                            ->get();
 
-        if($myCures == 'true'){
-            $course = \DB::table('task')
-                ->where('teachername',$userId)
-                ->select('task.*','course.*')
-                ->join('course','course.id','=','task.classname')
-                ->groupBy('course.name')
-                ->get();
-
-            return $course;
-        }else{
-            return $course = \DB::table('course')->get();
-        }
-
-
-//        return $myCures;
+        $data['publicCurse'] = \DB::table('course')->get();
+//        dd($data);
+        return $data;
     }
 }

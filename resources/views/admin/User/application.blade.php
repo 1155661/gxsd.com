@@ -131,11 +131,11 @@
                         {{--<input type="text" name="name" class="layui-input">--}}
                         <select name="name" lay-filter="course">
                             <option value="">选择课程</option>
-                            <option v-for="(item,key) in curesSelect" :value="item.name">@{{ item.name }}</option>
+                            <option v-for="(item,key) in cList" :value="item.name">@{{ item.name }}</option>
                         </select>
                     </div>
                     <div class="layui-input-block">
-                        <input type="checkbox" name="isMy"  v-model="curesBtn" @click="test()" style="margin-top: 20px;" lay-ignore>只看我的课程
+                        <input type="checkbox" name="isMy" @click="curesRenew()"  v-model="curesBtn" style="margin-top: 20px;" lay-ignore>只看我的课程
                     </div>
                 </div>
                 <div class="layui-form-item" id="classname">
@@ -180,16 +180,32 @@
                 curesBtn:false
             },
             methods:{
-                //课程下拉列表
+                //课程下拉列表 重新
                 selectCurse(){
                     let _this = this;
 
                     let userId = '{{session('gxsdmznAdminUserInfo.id')}}';
-                    let URL = "{{url('admin/UserName/application/getCurse')}}" + "?id="+userId + "&cures=" + _this.curesBtn;
+
+                    // console.log(userId);
+
+                    let URL = "{{url('admin/UserName/application/getCurse')}}" + "?id="+userId;
+
+
 
                     axios.get(URL).then(value => {
+                        // console.log(value.data.publicCurse);
+                        // let data = value.data;
+                        //
+                        // if(_this.curesBtn){
+                        //     _this.curesSelect = data.publicCurse;
+                        // }else {
+                        //     _this.curesSelect = data.myCurse;
+                        // }
                         _this.curesSelect = value.data;
                     })
+                },
+                curesRenew(){
+                    // this.selectCurse();
                 },
                 //申请弹窗
                 appadd(){
@@ -265,17 +281,13 @@
                         }
                     });
                 },
-                test(){
-                    let _this = this;
-                    _this.selectCurse();
-                },
+                // test(){
+                //     let _this = this;
+                //     _this.selectCurse();
+                // },
             },
             mounted(){
 
-                // layui.use(['form'],function () {
-                //     let form = layui.form;
-                //     form.render('select');
-                // });
 
                 this.selectCurse();
                 this.selectList();
@@ -292,16 +304,24 @@
             },
             computed:{
                 cList(){
-                    // let {curesSelect,curesBtn} = this;
-                    // let list = '';
-                    //
-                    // layui.use(['form'],function () {
-                    //     let form = layui.form;
-                    //     // return curesSelect;
-                    //     list = curesSelect;
-                    //     layui.form.render('select');
-                    // });
-                    // return list;
+                    let {curesSelect,curesBtn} = this;
+                    let list = [];
+                    let a = 0;
+                    list[0] = (curesSelect.myCurse);
+                    list[1] = (curesSelect.publicCurse);
+
+                    layui.use(['form'],() =>{
+                        let form = layui.form;
+                        if(curesBtn){
+                            a = 1;
+                        }else {
+                            a = 0;
+                        }
+
+                        form.render('select');
+
+                    });
+                    return list[a];
                 }
             }
         });
