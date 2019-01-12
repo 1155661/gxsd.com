@@ -304,24 +304,24 @@
             },
             computed:{
                 cList(){
-                    let {curesSelect,curesBtn} = this;
-                    let list = [];
-                    let a = 0;
-                    list[0] = (curesSelect.myCurse);
-                    list[1] = (curesSelect.publicCurse);
-
-                    layui.use(['form'],() =>{
-                        let form = layui.form;
-                        if(curesBtn){
-                            a = 1;
-                        }else {
-                            a = 0;
-                        }
-
-                        form.render('select');
-
-                    });
-                    return list[a];
+                    // let {curesSelect,curesBtn} = this;
+                    // let list = [];
+                    // let a = 0;
+                    // list[0] = (curesSelect.myCurse);
+                    // list[1] = (curesSelect.publicCurse);
+                    //
+                    // layui.use(['form'],() =>{
+                    //     let form = layui.form;
+                    //     if(curesBtn){
+                    //         a = 1;
+                    //     }else {
+                    //         a = 0;
+                    //     }
+                    //
+                    //     form.render('select');
+                    //
+                    // });
+                    // return list[a];
                 }
             }
         });
